@@ -1,8 +1,8 @@
 <?php
-$nilai1 = ["id"=>1, "nama"=>"alpian", "Nim"=>"1234", "uts"=>99, "uas"=>98, "tugas"=>97];
-$nilai2 = ["id"=>2, "nama"=>"alpian", "Nim"=>"1234", "uts"=>99, "uas"=>98, "tugas"=>97];
-$nilai3 = ["id"=>3, "nama"=>"alpian", "Nim"=>"1234", "uts"=>99, "uas"=>98, "tugas"=>97];
-$nilai4 = ["id"=>4, "nama"=>"alpian", "Nim"=>"1234", "uts"=>99, "uas"=>98, "tugas"=>97];
+$nilai1 = ["id" => 1, "nama" => "alpian", "Nim" => "1234", "uts" => 99, "uas" => 98, "tugas" => 97];
+$nilai2 = ["id" => 2, "nama" => "alpian", "Nim" => "1234", "uts" => 99, "uas" => 98, "tugas" => 97];
+$nilai3 = ["id" => 3, "nama" => "alpian", "Nim" => "1234", "uts" => 99, "uas" => 98, "tugas" => 97];
+$nilai4 = ["id" => 4, "nama" => "alpian", "Nim" => "1234", "uts" => 99, "uas" => 98, "tugas" => 97];
 
 $kumpulan_nilai = [$nilai1, $nilai2, $nilai3, $nilai4];
 
@@ -11,6 +11,7 @@ $kumpulan_nilai = [$nilai1, $nilai2, $nilai3, $nilai4];
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,34 +22,36 @@ $kumpulan_nilai = [$nilai1, $nilai2, $nilai3, $nilai4];
 
     <title>Hello, world!</title>
 </head>
+
 <body>
     <div class="container">
-    <h1 class="text-center"> Daftar nilai mahasiswa</h1>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>nama</th>
-                <th>Nim</th>
-                <th>uts</th>
-                <th>uas</th>
-                <th>tugas</th>
-                <th>nilai akhir</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($kumpulan_nilai as $nilai): ?>
-            <tr>
-                <td><?php echo $nilai["id"] ?></td>
-                <td><?php echo $nilai["nama"] ?></td>
-                <td><?php echo $nilai["Nim"] ?></td>
-                <td><?php echo $nilai["uts"] ?></td>
-                <td><?php echo $nilai["uas"] ?></td>
-                <td><?php echo $nilai["tugas"] ?></td>
-                <td><?php echo $nilai["uts"] * 0.3 + $nilai["uas"] * 0.4 + $nilai["tugas"] * 0.3 ?></td>
-            </tr>
-            <?php endforeach ?>
-        </tbody>
+        <h1 class="text-center"> Daftar nilai mahasiswa</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nama</th>
+                    <th>Nim</th>
+                    <th>uts</th>
+                    <th>uas</th>
+                    <th>tugas</th>
+                    <th>nilai akhir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($kumpulan_nilai as $nilai) : ?>
+                    <tr>
+                        <td><?php echo $nilai["id"] ?></td>
+                        <td><?php echo $nilai["nama"] ?></td>
+                        <td><?php echo $nilai["Nim"] ?></td>
+                        <td><?php echo $nilai["uts"] ?></td>
+                        <td><?php echo $nilai["uas"] ?></td>
+                        <td><?php echo $nilai["tugas"] ?></td>
+                        <td><?php echo $nilai["uts"] * 0.3 + $nilai["uas"] * 0.4 + $nilai["tugas"] * 0.3 ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -64,4 +67,5 @@ $kumpulan_nilai = [$nilai1, $nilai2, $nilai3, $nilai4];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     -->
 </body>
+
 </html>
