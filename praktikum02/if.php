@@ -28,5 +28,3 @@ if ($total_nilai >= 85) {
 }
 
 echo$grade;
-
-?>

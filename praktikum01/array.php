@@ -15,7 +15,7 @@ echo $mahasiswa["jurusan"] . "<br>";
 
 // Nampilin Semua Data
 foreach ($mahasiswa as $key=>$value){
-    echo "key : " . $key . "Value : " . $value . "<br>";
+    echo "key : " . $key . "Value : " . $value . "<br>";
 }
 
 // buat array multidemensi

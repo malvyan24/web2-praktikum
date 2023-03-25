@@ -29,3 +29,5 @@ switch ($grade) {
 }
 
 echo "predikat = " . $predikat;
+
+?>

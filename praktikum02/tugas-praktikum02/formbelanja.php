@@ -11,10 +11,10 @@
 
     <!-- style css internal -->
     <style>
-        /* body {
+        body {
             margin: 5%;
             border: 2px solid aqua;
-        } */
+        }
 
         .bungkus {
             display: flex;
@@ -93,47 +93,56 @@
             </table>
         </aside>
     </div>
-    <hr>
-    <?php
-
-    // cek kondisi input
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $customer = $_POST['customer'];
-        $produk = $_POST['produk'];
-        $jumlah = $_POST['jumlah'];
-
-        // harga produk
-        $harga_tv = 4200000;
-        $harga_kulkas = 3500000;
-        $harga_mesin_cuci = 3850000;
-
-        // hitung total harga
-        switch ($produk) {
-            case 'TV':
-                $total_harga = $harga_tv * $jumlah;
-                break;
-            case 'Kulkas':
-                $total_harga = $harga_kulkas * $jumlah;
-                break;
-            case 'Mesin cuci':
-                $total_harga = $harga_mesin_cuci * $jumlah;
-                break;
-            default:
-                $total_harga = 0;
-                break;
-        }
-        // tapilkan hasil inputan
-        if ($customer != '' && $produk != '' && $jumlah != '') {
-            echo "Nama Customer : $customer <br>";
-            echo "Produk : $produk <br>";
-            echo "Jumlah Beli : $jumlah <br>";
-            echo "Total Harga : Rp. $total_harga <br>";
-        } else {
-            echo "harap lengkapi data anda!!";
-        }
-    }
-
-    ?>
 </body>
 
 </html>
+
+<?php
+
+
+// cek kondisi input
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $customer = $_POST['customer'];
+    $produk = $_POST['produk'];
+    $jumlah = $_POST['jumlah'];
+
+    // harga produk
+    $harga_tv = 4200000;
+    $harga_kulkas = 3500000;
+    $harga_mesin_cuci = 3850000;
+
+    // hitung total harga
+    switch ($produk) {
+        case 'TV':
+            $total_harga = $harga_tv * $jumlah;
+            break;
+        case 'Kulkas':
+            $total_harga = $harga_kulkas * $jumlah;
+            break;
+        case 'Mesin cuci':
+            $total_harga = $harga_mesin_cuci * $jumlah;
+            break;
+        default:
+            $total_harga = 0;
+            break;
+    }
+}
+
+// tapilkan hasil inputan
+?>
+<div class="hasilInput">
+    <!-- Tampilan Hasil -->
+    <?php
+    if ($customer != '' && $produk != '' && $jumlah != '') {
+        echo "Nama Customer : $customer <br>";
+        echo "Produk : $produk <br>";
+        echo "Jumlah Beli : $jumlah <br>";
+        echo "Total Harga : Rp. $total_harga <br>";
+    } else {
+        echo "harap lengkapi data anda!!";
+    }
+    // menghide sintax error
+    error_reporting(0);
+    ?>
+
+</div>
