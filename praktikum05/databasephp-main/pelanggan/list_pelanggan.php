@@ -2,19 +2,19 @@
 require_once 'dbkoneksi.php';
 ?>
 <?php
-$sql = "SELECT * FROM produk";
+$sql = "SELECT * FROM pelanggan";
 $rs = $dbh->query($sql);
 ?>
 
-<a class="btn btn-success" href="form_produk.php" role="button">Create Produk</a>
+<a class="btn btn-success" href="form_pelanggan.php" role="button">Create Pelanggan</a>
 <table class="table" width="100%" border="1" cellspacing="2" cellpadding="2">
     <thead>
         <tr>
             <th>No</th>
             <th>Kode</th>
             <th>Nama</th>
-            <th>Harga Jual</th>
-            <th>Qty</th>
+            <th>Jenis Kelamin</th>
+            <th>Tempat lahir</th>
             <th>Action</th>
         </tr>
     </thead>
