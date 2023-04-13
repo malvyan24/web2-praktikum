@@ -30,7 +30,7 @@ require_once 'dbkoneksi.php';
         </div>
     </div>
     <div class="form-group row">
-        <label for="jk" class="col-4 col-form-label">Jenis Kelamin</label>
+        <label for="jk" class="col-4 col-form-label">kartu_id Kelamin</label>
         <div class="col-8">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -38,12 +38,13 @@ require_once 'dbkoneksi.php';
                         <i class="fa fa-arrow-circle-o-left"></i>
                     </div>
                 </div>
-                <input id="jk" name="jk" value="" type="text" class="form-control">
+                <input id="jk" name="jk" value="L" type="radio" class="form-control">Laki-Laki
+                <input id="jk" name="jk" value="P" type="radio" class="form-control">Perempuan
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label for="stok" class="col-4 col-form-label">Stok</label>
+        <label for="tmp_lahir" class="col-4 col-form-label">Tempat Lahir</label>
         <div class="col-8">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -51,12 +52,12 @@ require_once 'dbkoneksi.php';
                         <i class="fa fa-arrow-circle-up"></i>
                     </div>
                 </div>
-                <input id="stok" name="stok" value="" type="text" class="form-control">
+                <input id="tmp_lahir" name="tmp_lahir" value="" type="text" class="form-control">
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label for="min_stok" class="col-4 col-form-label">Minimum Stok</label>
+        <label for="tgl_lahir" class="col-4 col-form-label">Tanggal Lahir</label>
         <div class="col-8">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -64,20 +65,33 @@ require_once 'dbkoneksi.php';
                         <i class="fa fa-arrow-circle-right"></i>
                     </div>
                 </div>
-                <input id="min_stok" name="min_stok" value="" type="text" class="form-control">
+                <input id="tgl_lahir" name="tgl_lahir" value="" type="date" class="form-control">
             </div>
         </div>
     </div>
     <div class="form-group row">
-        <label for="jenis" class="col-4 col-form-label">Jenis pelanggan</label>
+        <label for="temail" class="col-4 col-form-label">Email</label>
+        <div class="col-8">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                </div>
+                <input id="temail" name="temail" value="" type="email" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="kartu_id" class="col-4 col-form-label">Kartu</label>
         <div class="col-8">
             <?php
-            $sqljenis = "SELECT * FROM jenis_pelanggan";
-            $rsjenis = $dbh->query($sqljenis);
+            $sqlkartu_id = "SELECT * FROM kartu";
+            $rskartu_id = $dbh->query($sqlkartu_id);
             ?>
-            <select id="jenis" name="jenis" class="custom-select">
+            <select id="kartu_id" name="kartu_id" class="custom-select">
                 <?php
-                foreach ($rsjenis as $data) {
+                foreach ($rskartu_id as $data) {
                 ?>
                     <option value="<?= $data['id'] ?>"><?= $data['nama'] ?></option>
                 <?php

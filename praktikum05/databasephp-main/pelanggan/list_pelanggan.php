@@ -14,7 +14,10 @@ $rs = $dbh->query($sql);
             <th>Kode</th>
             <th>Nama</th>
             <th>Jenis Kelamin</th>
-            <th>Tempat lahir</th>
+            <th>Tempat Lahir</th>
+            <th>Tanggal Lahir</th>
+            <th>Email</th>
+            <th>Kartu_id</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -27,12 +30,15 @@ $rs = $dbh->query($sql);
                 <td><?= $nomor ?></td>
                 <td><?= $row['kode'] ?></td>
                 <td><?= $row['nama'] ?></td>
-                <td><?= $row['harga_jual'] ?></td>
-                <td><?= $row['stok'] ?></td>
+                <td><?= $row['jk'] ?></td>
+                <td><?= $row['tmp_lahir'] ?></td>
+                <td><?= $row['tgl_lahir'] ?></td>
+                <td><?= $row['email'] ?></td>
+                <td><?= $row['kartu_id'] ?></td>
                 <td>
-                    <a class="btn btn-primary" href="view_produk.php?id=<?= $row['id'] ?>">View</a>
-                    <a class="btn btn-primary" href="form_produk.php?idedit=<?= $row['id'] ?>">Edit</a>
-                    <a class="btn btn-primary" href="delete_produk.php?iddel=<?= $row['id'] ?>" onclick="if(!confirm('Anda Yakin Hapus Data Produk <?= $row['nama'] ?>?')) {return false}">Delete</a>
+                    <a class="btn btn-primary" href="view_pelanggan.php?id=<?= $row['id'] ?>">View</a>
+                    <a class="btn btn-primary" href="form_pelanggan.php?idedit=<?= $row['id'] ?>">Edit</a>
+                    <a class="btn btn-primary" href="delete_pelanggan.php?iddel=<?= $row['id'] ?>" onclick="if(!confirm('Anda Yakin Hapus Data Produk <?= $row['nama'] ?>?')) {return false}">Delete</a>
                 </td>
             </tr>
         <?php
