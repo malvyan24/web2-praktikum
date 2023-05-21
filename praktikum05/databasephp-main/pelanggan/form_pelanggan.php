@@ -1,5 +1,17 @@
 <?php
 require_once 'dbkoneksi.php';
+
+if (!empty($_GET['idedit'])) {
+    $edit = $_GET['idedit'];
+
+    $sql = "SELECT * FROM pelanggan WHERE id=?";
+    $st = $dbh ->prepare($sql);
+    $st->execute([$edit]);
+    $row = $st->fetch();
+} else {
+    $row =[];
+}
+
 ?>
 
 <form method="POST" action="proses_pelanggan.php">
@@ -107,7 +119,11 @@ require_once 'dbkoneksi.php';
     </div>
     <div class="form-group row">
         <div class="offset-4 col-8">
-            <input type="submit" name="proses" type="submit" class="btn btn-primary" value="Simpan" />
+            <?php 
+            $button = (empty($edit) ? "simpan" : "update";
+            ?>
+            <input type="submit" name="proses" type="submit" class="btn btn-primary" value="<? echo $button ?>" />
+            <input type="hidden" name="idedit" value="<? echo $button ?>" />
         </div>
     </div>
 </form>
